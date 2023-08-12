@@ -1,3 +1,5 @@
+import type { Expect, Equal } from './index'
+
 namespace map {
   type Pokemon = [
     { name: 'bulbasaur', id: 1 },
@@ -24,6 +26,11 @@ namespace map {
       : []
 
   type PokeNames = MapPokeNames<Pokemon>
+  type test1 = Expect<Equal<PokeNames, ['bulbasaur', 'ivysaur', 'venusaur']>>
+
   type PokeIDs = MapPokeIDs<Pokemon>
+  type test2 = Expect<Equal<PokeIDs, [1, 2, 3]>>
+
   type PokeTuples = MapPokeTuple<Pokemon>
+  type test3 = Expect<Equal<PokeTuples, [['bulbasaur', 1], ['ivysaur', 2], ['venusaur', 3]]>>
 }
