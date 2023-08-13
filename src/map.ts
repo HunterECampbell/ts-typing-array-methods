@@ -1,12 +1,6 @@
-import type { Expect, Equal } from './index'
+import type { Equal, Expect } from './index'
 
 namespace map {
-  type Pokemon = [
-    { name: 'bulbasaur', id: 1 },
-    { name: 'ivysaur', id: 2 },
-    { name: 'venusaur', id: 3 },
-  ]
-
   type GetName<Poke> = Poke extends { name: infer Name } ? Name : '';
   type GetID<Poke> = Poke extends { id: infer ID } ? ID : 0
 
@@ -25,12 +19,18 @@ namespace map {
       ? [[GetName<First>, GetID<First>], ...MapPokeTuple<Rest>]
       : []
 
-  type PokeNames = MapPokeNames<Pokemon>
-  type test1 = Expect<Equal<PokeNames, ['bulbasaur', 'ivysaur', 'venusaur']>>
+  type Test = [
+    { name: 'bulbasaur', id: 1 },
+    { name: 'ivysaur', id: 2 },
+    { name: 'venusaur', id: 3 },
+  ]
 
-  type PokeIDs = MapPokeIDs<Pokemon>
-  type test2 = Expect<Equal<PokeIDs, [1, 2, 3]>>
+  type res1 = MapPokeNames<Test>
+  type test1 = Expect<Equal<res1, ['bulbasaur', 'ivysaur', 'venusaur']>>
 
-  type PokeTuples = MapPokeTuple<Pokemon>
-  type test3 = Expect<Equal<PokeTuples, [['bulbasaur', 1], ['ivysaur', 2], ['venusaur', 3]]>>
+  type res2 = MapPokeIDs<Test>
+  type test2 = Expect<Equal<res2, [1, 2, 3]>>
+
+  type res3 = MapPokeTuple<Test>
+  type test3 = Expect<Equal<res3, [['bulbasaur', 1], ['ivysaur', 2], ['venusaur', 3]]>>
 }
