@@ -1,4 +1,4 @@
-import type { Equal, Expect } from './index'
+import type { Equal, Expect } from './utilities'
 
 namespace map {
   type GetName<Poke> = Poke extends { name: infer Name } ? Name : '';
@@ -25,12 +25,12 @@ namespace map {
     { name: 'venusaur', id: 3 },
   ]
 
-  type res1 = MapPokeNames<Test>
-  type test1 = Expect<Equal<res1, ['bulbasaur', 'ivysaur', 'venusaur']>>
+  type testMapPokeNames1 = MapPokeNames<Test>
+  type resMapPokeNames11 = Expect<Equal<testMapPokeNames1, ['bulbasaur', 'ivysaur', 'venusaur']>>
 
-  type res2 = MapPokeIDs<Test>
-  type test2 = Expect<Equal<res2, [1, 2, 3]>>
+  type testMapPokeIDs1 = MapPokeIDs<Test>
+  type resMapPokeIDs1 = Expect<Equal<testMapPokeIDs1, [1, 2, 3]>>
 
-  type res3 = MapPokeTuple<Test>
-  type test3 = Expect<Equal<res3, [['bulbasaur', 1], ['ivysaur', 2], ['venusaur', 3]]>>
+  type testMapPokeTuple1 = MapPokeTuple<Test>
+  type resMapPokeTuple1 = Expect<Equal<testMapPokeTuple1, [['bulbasaur', 1], ['ivysaur', 2], ['venusaur', 3]]>>
 }
