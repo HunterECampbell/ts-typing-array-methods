@@ -32,6 +32,6 @@ export type LastInNumArr<T extends number[]> =
 
 type testLastInNumArr1 = LastInNumArr<[1, 2, 3]>
 type resLastInNumArr1 = Expect<Equal<testLastInNumArr1, 3>>
-// @ts-expect-error
+// @ts-expect-error - Purposefully passing in a string[]
 type testLastInNumArr2 = LastInNumArr<['a', 'b', 'c']>
 type resLastInNumArr2 = Expect<Equal<testLastInNumArr2, never>>
