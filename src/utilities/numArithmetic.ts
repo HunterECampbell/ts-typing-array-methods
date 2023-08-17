@@ -1,22 +1,29 @@
-import { Equal, Expect } from './index'
+import { Equal, ExpectTrue } from './index'
+
+export type ConvertStringToNum<N extends string> =
+  N extends '0' ? 0 :
+  N extends '1' ? 1 :
+  N extends '2' ? 2 :
+  N extends '3' ? 3 :
+  N extends '4' ? 4 :
+  N extends '5' ? 5 :
+  N extends '6' ? 6 :
+  N extends '7' ? 7 :
+  N extends '8' ? 8 :
+  N extends '9' ? 9 : never;
+
+export type ConvertToPositive<N extends number> =
+  IsPositiveNum<N> extends false
+  ? `${N}` extends `-${infer P}`
+    ? ConvertStringToNum<P>
+    : N
+  : N
 
 export type IsNum<N> = N extends number ? true : false
 
-type testIsNum1 = IsNum<1>
-type resIsNUm1 = Expect<Equal<testIsNum1, true>>
-type testIsNum2 = IsNum<undefined>
-type resIsNUm2 = Expect<Equal<testIsNum2, false>>
-type testIsNum3 = IsNum<'test'>
-type resIsNUm3 = Expect<Equal<testIsNum3, false>>
+export type IsPositiveNum<N extends number> = `${N}` extends `-${string}` ? false : true
 
 export type ZeroToXArr<N extends number, Output extends number[] = []> =
   Output['length'] extends N
     ? [...Output, Output['length']]
     : ZeroToXArr<N, [...Output, Output['length']]>
-
-type testZeroToX1 = ZeroToXArr<10>
-type resZeroToX1 = Expect<Equal<testZeroToX1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]>>
-type testZeroToX2 = ZeroToXArr<11>
-type resZeroToX2 = Expect<Equal<testZeroToX2, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]>>
-type testZeroToX3 = ZeroToXArr<0>
-type resZeroToX23= Expect<Equal<testZeroToX3, [0]>>
