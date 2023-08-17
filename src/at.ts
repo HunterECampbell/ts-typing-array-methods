@@ -26,16 +26,18 @@ namespace at {
 
   type Test = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard']
 
-  type testAt1 = At<Test, 1>
-  type resAt1 = ExpectTrue<Equal<testAt1, 'ivysaur'>>
-  type testAt2 = At<Test, 4>
-  type resAt2 = ExpectTrue<Equal<testAt2, 'charmeleon'>>
-  type testAt3 = At<Test, -1>
-  type resAt3 = ExpectTrue<Equal<testAt3, 'charizard'>>
-  type testAt4 = At<Test, -4>
-  type resAt4 = ExpectTrue<Equal<testAt4, 'venusaur'>>
-  type testAt5 = At<Test, 100>
-  type resAt5 = ExpectTrue<Equal<testAt5, undefined>>
-  type testAt6 = At<Test, -100>
+  type testAt1 = At<Test, 0>
+  type resAt1 = ExpectTrue<Equal<testAt1, 'bulbasaur'>>
+  type testAt2 = At<Test, 1>
+  type resAt2 = ExpectTrue<Equal<testAt2, 'ivysaur'>>
+  type testAt3 = At<Test, 4>
+  type resAt3 = ExpectTrue<Equal<testAt3, 'charmeleon'>>
+  type testAt4 = At<Test, -1>
+  type resAt4 = ExpectTrue<Equal<testAt4, 'charizard'>>
+  type testAt5 = At<Test, -4>
+  type resAt5 = ExpectTrue<Equal<testAt5, 'venusaur'>>
+  type testAt6 = At<Test, 100>
   type resAt6 = ExpectTrue<Equal<testAt6, undefined>>
+  type testAt7 = At<Test, -100>
+  type resAt7 = ExpectTrue<Equal<testAt7, undefined>>
 }
