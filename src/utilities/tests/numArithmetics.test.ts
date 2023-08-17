@@ -3,10 +3,12 @@ import { ConvertStringToNum, ConvertToPositive, IsNum, IsPositiveNum, ZeroToXArr
 
 type testConvertStringToNum1 = ConvertStringToNum<'1'>
 type resConvertStringToNum1 = ExpectTrue<Equal<testConvertStringToNum1, 1>>
-type testConvertStringToNum2 = ConvertStringToNum<'100'>
-type resConvertStringToNum2 = ExpectTrue<Equal<testConvertStringToNum2, 100>>
-type testConvertStringToNum3 = ConvertStringToNum<'test'>
-type resConvertStringToNum3 = ExpectTrue<Equal<testConvertStringToNum3, never>>
+type testConvertStringToNum2 = ConvertStringToNum<'11'>
+type resConvertStringToNum2 = ExpectTrue<Equal<testConvertStringToNum2, 11>>
+type testConvertStringToNum3 = ConvertStringToNum<'100'>
+type resConvertStringToNum3 = ExpectTrue<Equal<testConvertStringToNum3, 100>>
+type testConvertStringToNum4 = ConvertStringToNum<'test'>
+type resConvertStringToNum4 = ExpectTrue<Equal<testConvertStringToNum4, never>>
 
 type testConvertToPositive1 = ConvertToPositive<-1>
 type resConvertToPositive1 = ExpectTrue<Equal<testConvertToPositive1, 1>>
