@@ -4,6 +4,8 @@ Using TypeScript to type Array Methods.
 
 ## Completed Array Methods
 
+[Array.prototype.at()](./src/at.ts)
+
 [Array.prototype.filter()](./src/filter.ts)
 
 [Array.prototype.find()](./src/find.ts)
