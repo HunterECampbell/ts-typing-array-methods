@@ -1,4 +1,4 @@
-import { Equal, ExpectTrue } from './index'
+import { Equal, ExpectTrue, GreaterThan } from './index'
 
 export type ArrLength<T extends unknown[]> = T['length']
 
