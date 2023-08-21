@@ -8,6 +8,8 @@ Using TypeScript to type Array Methods.
 
 [Array.prototype.concat()](./src/concat.ts)
 
+[Array.prototype.entries()](./src/entires.ts)
+
 [Array.prototype.filter()](./src/filter.ts)
 
 [Array.prototype.find()](./src/find.ts)
