@@ -1,4 +1,4 @@
-import { Equal, ExpectTrue } from './utilities';
+import { Equal, Expect } from './utilities';
 
 namespace entries {
   type Entries<T extends unknown[], Output extends unknown[] = []> =
@@ -7,9 +7,9 @@ namespace entries {
       : Output
 
   type testEntries1 = Entries<[1, 2, 3]>
-  type resEntries1 = ExpectTrue<Equal<testEntries1, [[0, 1], [1, 2], [2, 3]]>>
+  type resEntries1 = Expect<Equal<testEntries1, [[0, 1], [1, 2], [2, 3]]>>
   type testEntries2 = Entries<['a', 'b', 'c']>
-  type resEntries2 = ExpectTrue<Equal<testEntries2, [[0, 'a'], [1, 'b'], [2, 'c']]>>
+  type resEntries2 = Expect<Equal<testEntries2, [[0, 'a'], [1, 'b'], [2, 'c']]>>
   type testEntries3 = Entries<[{ name: 'Bob' }, { name: 'Billy' }, { name: 'Frank' }]>
-  type resEntries3 = ExpectTrue<Equal<testEntries3, [[0, { name: 'Bob' }], [1, { name: 'Billy' }], [2, { name: 'Frank' }]]>>
+  type resEntries3 = Expect<Equal<testEntries3, [[0, { name: 'Bob' }], [1, { name: 'Billy' }], [2, { name: 'Frank' }]]>>
 }

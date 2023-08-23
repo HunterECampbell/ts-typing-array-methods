@@ -1,3 +1,4 @@
 export * from './arrSpecifics'
 export * from './conditionals'
-export * from './numArithmetic'
+export * from './numSpecifics'
+export * from './strSpecifics'

@@ -7,7 +7,7 @@ export type Equal<X, Y> =
       : false
     : false;
 
-export type ExpectTrue<T extends true> = T;
+export type Expect<T extends true> = T;
 
 export type GreaterThan<N extends number, CompareN extends number> =
   IsNum<

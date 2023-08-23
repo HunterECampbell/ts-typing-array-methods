@@ -1,26 +1,26 @@
-import { Equal, ExpectTrue } from '../index'
+import { Equal, Expect } from '../index'
 import { ArrLength, LastInArr, LastInNumArr } from '../arrSpecifics'
 
 type testArrLength1 = ArrLength<[1, 2, 3]>
-type resArrLength1 = ExpectTrue<Equal<testArrLength1, 3>>
+type resArrLength1 = Expect<Equal<testArrLength1, 3>>
 type testArrLength2 = ArrLength<[1, 2, 3, 4]>
-type resArrLength2 = ExpectTrue<Equal<testArrLength2, 4>>
+type resArrLength2 = Expect<Equal<testArrLength2, 4>>
 type testArrLength3 = ArrLength<[]>
-type resArrLength3 = ExpectTrue<Equal<testArrLength3, 0>>
+type resArrLength3 = Expect<Equal<testArrLength3, 0>>
 
 type testLastInArr1 = LastInArr<[1, 2, 3]>
-type resLastInArr1 = ExpectTrue<Equal<testLastInArr1, 3>>
+type resLastInArr1 = Expect<Equal<testLastInArr1, 3>>
 type testLastInArr2 = LastInArr<['a', 'b', 'c']>
-type resLastInArr2 = ExpectTrue<Equal<testLastInArr2, 'c'>>
+type resLastInArr2 = Expect<Equal<testLastInArr2, 'c'>>
 type testLastInArr3 = LastInArr<[{ name: 'Bob', id: 1 }, { name: 'Billy', id: 2 }]>
-type resLastInArr3 = ExpectTrue<Equal<testLastInArr3, { name: 'Billy', id: 2 }>>
+type resLastInArr3 = Expect<Equal<testLastInArr3, { name: 'Billy', id: 2 }>>
 type testLastInArr4 = LastInArr<[1]>
-type resLastInArr4 = ExpectTrue<Equal<testLastInArr4, 1>>
+type resLastInArr4 = Expect<Equal<testLastInArr4, 1>>
 type testLastInArr5 = LastInArr<[]>
-type resLastInArr5 = ExpectTrue<Equal<testLastInArr5, never>>
+type resLastInArr5 = Expect<Equal<testLastInArr5, never>>
 
 type testLastInNumArr1 = LastInNumArr<[1, 2, 3]>
-type resLastInNumArr1 = ExpectTrue<Equal<testLastInNumArr1, 3>>
+type resLastInNumArr1 = Expect<Equal<testLastInNumArr1, 3>>
 // @ts-expect-error - Purposefully passing in a string[]
 type testLastInNumArr2 = LastInNumArr<['a', 'b', 'c']>
-type resLastInNumArr2 = ExpectTrue<Equal<testLastInNumArr2, never>>
+type resLastInNumArr2 = Expect<Equal<testLastInNumArr2, never>>

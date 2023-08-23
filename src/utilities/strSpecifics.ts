@@ -1,0 +1,1 @@
+export type IsStr<T> = T extends string ? true : false

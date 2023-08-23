@@ -1,4 +1,4 @@
-import { ConvertToPositive, Equal, ExpectTrue, IsPositiveNum } from './utilities'
+import { ConvertToPositive, Equal, Expect, IsPositiveNum } from './utilities'
 
 namespace at {
   type AtForwards<T extends unknown[], Index extends number, Count extends unknown[] = []> =
@@ -27,17 +27,17 @@ namespace at {
   type Test = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard']
 
   type testAt1 = At<Test, 0>
-  type resAt1 = ExpectTrue<Equal<testAt1, 'bulbasaur'>>
+  type resAt1 = Expect<Equal<testAt1, 'bulbasaur'>>
   type testAt2 = At<Test, 1>
-  type resAt2 = ExpectTrue<Equal<testAt2, 'ivysaur'>>
+  type resAt2 = Expect<Equal<testAt2, 'ivysaur'>>
   type testAt3 = At<Test, 4>
-  type resAt3 = ExpectTrue<Equal<testAt3, 'charmeleon'>>
+  type resAt3 = Expect<Equal<testAt3, 'charmeleon'>>
   type testAt4 = At<Test, -1>
-  type resAt4 = ExpectTrue<Equal<testAt4, 'charizard'>>
+  type resAt4 = Expect<Equal<testAt4, 'charizard'>>
   type testAt5 = At<Test, -4>
-  type resAt5 = ExpectTrue<Equal<testAt5, 'venusaur'>>
+  type resAt5 = Expect<Equal<testAt5, 'venusaur'>>
   type testAt6 = At<Test, 100>
-  type resAt6 = ExpectTrue<Equal<testAt6, undefined>>
+  type resAt6 = Expect<Equal<testAt6, undefined>>
   type testAt7 = At<Test, -100>
-  type resAt7 = ExpectTrue<Equal<testAt7, undefined>>
+  type resAt7 = Expect<Equal<testAt7, undefined>>
 }
