@@ -14,4 +14,6 @@ Using TypeScript to type Array Methods.
 
 [Array.prototype.find()](./src/find.ts)
 
+[Array.prototype.findIndex()](./src/findIndex.ts)
+
 [Array.prototype.map()](./src/map.ts)

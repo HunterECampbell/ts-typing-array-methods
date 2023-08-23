@@ -1,5 +1,3 @@
-import { Equal, ExpectTrue } from './index'
-
 export type ConvertStringToNum<N extends string> =
   N extends '0' ? 0 :
   N extends '1' ? 1 :

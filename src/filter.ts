@@ -1,4 +1,4 @@
-import type { Equal, ExpectTrue } from './utilities'
+import type { Equal, Expect } from './utilities'
 
 namespace filter {
   type Filter<Tuple extends unknown[], Cond extends number | string> =
@@ -11,7 +11,7 @@ namespace filter {
   type Test = ['charmander', 3, 4, 'charizard', 'charmeleon', 8]
 
   type testFilter1 = Filter<Test, string>
-  type resFilter1 = ExpectTrue<Equal<testFilter1, ['charmander', 'charizard', 'charmeleon']>>
+  type resFilter1 = Expect<Equal<testFilter1, ['charmander', 'charizard', 'charmeleon']>>
   type testFilter2 = Filter<Test, number>
-  type resFilter2 = ExpectTrue<Equal<testFilter2, [3, 4, 8]>>
+  type resFilter2 = Expect<Equal<testFilter2, [3, 4, 8]>>
 }

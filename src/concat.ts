@@ -1,4 +1,4 @@
-import { Equal, ExpectTrue } from './utilities'
+import { Equal, Expect } from './utilities'
 
 namespace concat {
   type Concat<Start extends unknown[], Tuples extends unknown[][], Output extends unknown[] = [...Start]> =
@@ -7,9 +7,9 @@ namespace concat {
       : Output
 
   type testConcat1 = Concat<[1, 2], [[3, 4]]>
-  type resConcat1 = ExpectTrue<Equal<testConcat1, [1, 2, 3, 4]>>
+  type resConcat1 = Expect<Equal<testConcat1, [1, 2, 3, 4]>>
   type testConcat2 = Concat<['a', 'b', 'c'], [['d', 'e'], ['f']]>
-  type resConcat2 = ExpectTrue<Equal<testConcat2, ['a', 'b', 'c', 'd', 'e', 'f']>>
+  type resConcat2 = Expect<Equal<testConcat2, ['a', 'b', 'c', 'd', 'e', 'f']>>
   type testConcat3 = Concat<[{ name: 'Bob', id: 1 }, { name: 'Billy', id: 2 }], [[1], ['a', 'b']]>
-  type resConcat3 = ExpectTrue<Equal<testConcat3, [{ name: 'Bob', id: 1 }, { name: 'Billy', id: 2 }, 1, 'a', 'b']>>
+  type resConcat3 = Expect<Equal<testConcat3, [{ name: 'Bob', id: 1 }, { name: 'Billy', id: 2 }, 1, 'a', 'b']>>
 }
