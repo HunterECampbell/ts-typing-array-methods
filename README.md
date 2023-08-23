@@ -18,4 +18,6 @@ Using TypeScript to type Array Methods.
 
 [Array.prototype.findLast()](./src/findLast.ts)
 
+[Array.prototype.findLastIndex()](./src/findLastIndex.ts)
+
 [Array.prototype.map()](./src/map.ts)
