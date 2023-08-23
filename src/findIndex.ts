@@ -15,13 +15,13 @@ namespace findIndex {
         : FindIndexOfString<Rest, [...Count, First]>
       : -1
 
-  type FindIndexOfGreaterThan<T extends unknown[], Cond extends number, Count extends unknown[] = []> =
+  type FindIndexOfGreaterThan<T extends unknown[], CompareN extends number, Count extends unknown[] = []> =
     T extends [infer First, ...infer Rest]
       ? First extends number
-        ? GreaterThan<First, Cond> extends true
+        ? GreaterThan<First, CompareN> extends true
           ? Count['length']
-          : FindIndexOfGreaterThan<Rest, Cond, [...Count, First]>
-        : FindIndexOfGreaterThan<Rest, Cond, [...Count, First]>
+          : FindIndexOfGreaterThan<Rest, CompareN, [...Count, First]>
+        : FindIndexOfGreaterThan<Rest, CompareN, [...Count, First]>
       : -1
 
   type testFindIndexOfNumber1 = FindIndexOfNumber<[1, 'a', 2, 'b', 3, 'c']>
