@@ -21,6 +21,18 @@ export type IsNum<N> = N extends number ? true : false
 
 export type IsPositiveNum<N extends number> = `${N}` extends `-${string}` ? false : true
 
+export type Minus<
+  N1 extends number,
+  N2 extends number,
+  Output extends number[][] = [ZeroToXArr<N1>, ZeroToXArr<N2>]
+> =
+  Output[0] extends [infer _, ...infer N1Rest extends number[]]
+    ? Output[1] extends [infer _, ...infer N2Rest extends number[]]
+      ? Minus<N1, N2, [[...N1Rest], [...N2Rest]]>
+      : Output[0]['length']
+    : Output[1]['length']
+
+
 export type ZeroToXArr<N extends number, Output extends number[] = []> =
   Output['length'] extends N
     ? [...Output, Output['length']]
