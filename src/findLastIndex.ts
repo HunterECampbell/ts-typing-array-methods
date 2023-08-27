@@ -3,45 +3,31 @@ import { Equal, Expect, GreaterThan, IsNum, IsStr, Minus } from './utilities'
 // TODO: Create and use Minus<N1, N2> on the array length to find the index
 
 namespace findLastIndex {
-  type FindLastIndexOfNum<
-    T extends unknown[],
-    Count extends unknown[] = T extends [...infer InnerFirst, infer _] ? [...InnerFirst] : []
-  > =
+  type FindLastIndexOfNum<T extends unknown[], Count extends unknown[] = [...T]> =
     T extends [...infer First, infer Last]
       ? IsNum<Last> extends true
-        ? Count['length']
-        : First extends [...infer InnerFirst, infer _]
-          ? FindLastIndexOfNum<First, [...InnerFirst]>
-          : never
+        ? Minus<Count['length'], 1>
+        : FindLastIndexOfNum<First>
       : -1
 
-  type FindLastIndexOfStr<
-    T extends unknown[],
-    Count extends unknown[] = T extends [...infer InnerFirst, infer _] ? [...InnerFirst] : []
-  > =
+  type FindLastIndexOfStr<T extends unknown[], Count extends unknown[] = [...T]> =
     T extends [...infer First, infer Last]
-    ? IsStr<Last> extends true
-      ? Count['length']
-      : First extends [...infer InnerFirst, infer _]
-        ? FindLastIndexOfStr<First, [...InnerFirst]>
-        : never
+      ? IsStr<Last> extends true
+        ? Minus<Count['length'], 1>
+        : FindLastIndexOfStr<First>
       : -1
 
   type FindLastIndexOfGreaterThan<
     T extends unknown[],
     CompareN extends number,
-    Count extends unknown[] = T extends [...infer InnerFirst, infer _] ? [...InnerFirst] : []
+    Count extends unknown[] = [...T]
   > =
     T extends [...infer First, infer Last]
       ? Last extends number
         ? GreaterThan<Last, CompareN> extends true
-          ? Count['length']
-          : First extends [...infer InnerFirst, infer _]
-            ? FindLastIndexOfGreaterThan<First, CompareN, [...InnerFirst]>
-            : never
-        : First extends [...infer InnerFirst, infer _]
-          ? FindLastIndexOfGreaterThan<First, CompareN, [...InnerFirst]>
-          : never
+          ? Minus<Count['length'], 1>
+          : FindLastIndexOfGreaterThan<First, CompareN>
+        : FindLastIndexOfGreaterThan<First, CompareN>
       : -1
 
   type testFindLastIndexOfNum1 = FindLastIndexOfNum<['a', 1, 'b', 2, 'c', 3]>
