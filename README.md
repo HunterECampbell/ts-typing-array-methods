@@ -10,6 +10,8 @@ Using TypeScript to type Array Methods.
 
 [Array.prototype.entries()](./src/entires.ts)
 
+[Array.prototype.every()](./src/every.ts)
+
 [Array.prototype.filter()](./src/filter.ts)
 
 [Array.prototype.find()](./src/find.ts)
