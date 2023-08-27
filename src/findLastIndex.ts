@@ -1,7 +1,5 @@
 import { Equal, Expect, GreaterThan, IsNum, IsStr, Minus } from './utilities'
 
-// TODO: Create and use Minus<N1, N2> on the array length to find the index
-
 namespace findLastIndex {
   type FindLastIndexOfNum<T extends unknown[], Count extends unknown[] = [...T]> =
     T extends [...infer First, infer Last]
