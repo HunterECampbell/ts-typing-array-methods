@@ -75,6 +75,6 @@ namespace every {
   type resEveryGreaterThanOrEqual5 = Expect<Equal<testEveryGreaterThanOrEqual5, false>>
   type testEveryGreaterThanOrEqual6 = EveryGreaterThanOrEqual<[4, 5, 6, 'a'], 5>
   type resEveryGreaterThanOrEqual6 = Expect<Equal<testEveryGreaterThanOrEqual6, false>>
-  type testEveryGreaterThanOrEqual7 = EveryGreaterThanOrEqual<[], 5>
+  type testEveryGreaterThanOrEqual7 = EveryGreaterThanOrEqual<[], 0>
   type resEveryGreaterThanOrEqual7 = Expect<Equal<testEveryGreaterThanOrEqual7, false>>
 }
