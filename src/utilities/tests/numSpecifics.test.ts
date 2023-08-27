@@ -1,5 +1,5 @@
 import { Equal, Expect } from '../index'
-import { ConvertStringToNum, ConvertToPositive, IsNum, IsPositiveNum, ZeroToXArr } from '../numSpecifics'
+import { ConvertStringToNum, ConvertToPositive, IsNum, IsPositiveNum, Minus, ZeroToXArr } from '../numSpecifics'
 
 type testConvertStringToNum1 = ConvertStringToNum<'1'>
 type resConvertStringToNum1 = Expect<Equal<testConvertStringToNum1, 1>>
@@ -30,6 +30,17 @@ type testIsPositiveNum2 = IsPositiveNum<0>
 type resIsPositiveNum2 = Expect<Equal<testIsPositiveNum2, true>>
 type testIsPositiveNum3 = IsPositiveNum<-10>
 type resIsPositiveNum3 = Expect<Equal<testIsPositiveNum3, false>>
+
+type testMinus1 = Minus<5, 3>
+type resMinus1 = Expect<Equal<testMinus1, 2>>
+type testMinus2 = Minus<1, 0>
+type resMinus2 = Expect<Equal<testMinus2, 1>>
+type testMinus3 = Minus<1, 1>
+type resMinus3 = Expect<Equal<testMinus3, 0>>
+type testMinus4 = Minus<3, 5>
+type resMinus4 = Expect<Equal<testMinus4, 2>>
+type testMinus5 = Minus<10, 5>
+type resMinus5 = Expect<Equal<testMinus5, 5>>
 
 type testZeroToX1 = ZeroToXArr<10>
 type resZeroToX1 = Expect<Equal<testZeroToX1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]>>
