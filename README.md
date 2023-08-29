@@ -12,6 +12,8 @@ Using TypeScript to type Array Methods.
 
 [Array.prototype.every()](./src/every.ts)
 
+[Array.prototype.fill()](./src/fill.ts)
+
 [Array.prototype.filter()](./src/filter.ts)
 
 [Array.prototype.find()](./src/find.ts)

@@ -20,3 +20,8 @@ export type GreaterThanOrEqualTo<N extends number, CompareN extends number> =
       ? true
       : false
     : true
+
+export type LessThan<N extends number, CompareN extends number> =
+  IsNum<
+    [...ZeroToXArr<N>][LastInNumArr<[...ZeroToXArr<CompareN>]>]
+    > extends true ? false : true
