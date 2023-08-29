@@ -20,6 +20,6 @@ namespace lastIndexOf {
   type resLastIndexOf4 = Expect<Equal<testLastIndexOf4, 1>>
   type testLastIndexOf5 = LastIndexOf<Test, 'missing'>
   type resLastIndexOf5 = Expect<Equal<testLastIndexOf5, -1>>
-  type testLastIndexOf6 = LastIndexOf<[], 'a'>
+  type testLastIndexOf6 = LastIndexOf<[], 1>
   type resLastIndexOf6 = Expect<Equal<testLastIndexOf6, -1>>
 }
