@@ -46,7 +46,7 @@ Practice using TypeScript to type Array Methods.
 
 [Array.prototype.pop()](./src/pop.ts)
 
-<!-- [Array.prototype.push()](./src/push.ts) -->
+[Array.prototype.push()](./src/push.ts)
 
 <!-- [Array.prototype.reduce()](./src/reduce.ts) -->
 
