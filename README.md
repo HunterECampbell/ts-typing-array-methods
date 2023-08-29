@@ -30,7 +30,7 @@ Practice using TypeScript to type Array Methods.
 
 <!-- [Array.prototype.flatMap()](./src/flatMap.ts) -->
 
-<!-- [Array.prototype.forEach()](./src/forEach.ts) -->
+[Array.prototype.forEach()](./src/forEach.ts)
 
 [Array.prototype.includes()](./src/includes.ts)
 
