@@ -48,7 +48,7 @@ Practice using TypeScript to type Array Methods.
 
 [Array.prototype.push()](./src/push.ts)
 
-<!-- [Array.prototype.reduce()](./src/reduce.ts) -->
+[Array.prototype.reduce()](./src/reduce.ts)
 
 <!-- [Array.prototype.reduceRight()](./src/reduceRight.ts) -->
 
