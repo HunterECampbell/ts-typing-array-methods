@@ -52,7 +52,7 @@ Practice using TypeScript to type Array Methods.
 
 <!-- [Array.prototype.reduceRight()](./src/reduceRight.ts) -->
 
-<!-- [Array.prototype.reverse()](./src/reverse.ts) -->
+[Array.prototype.reverse()](./src/reverse.ts)
 
 <!-- [Array.prototype.shift()](./src/shift.ts) -->
 
