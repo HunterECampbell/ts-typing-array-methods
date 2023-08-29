@@ -40,7 +40,7 @@ Practice using TypeScript to type Array Methods.
 
 <!-- [Array.prototype.keys()](./src/keys.ts) -->
 
-<!-- [Array.prototype.lastIndexOf()](./src/lastIndexOf.ts) -->
+[Array.prototype.lastIndexOf()](./src/lastIndexOf.ts)
 
 [Array.prototype.map()](./src/map.ts)
 
