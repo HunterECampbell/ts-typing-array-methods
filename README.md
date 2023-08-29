@@ -44,7 +44,7 @@ Practice using TypeScript to type Array Methods.
 
 [Array.prototype.map()](./src/map.ts)
 
-<!-- [Array.prototype.pop()](./src/pop.ts) -->
+[Array.prototype.pop()](./src/pop.ts)
 
 <!-- [Array.prototype.push()](./src/push.ts) -->
 
