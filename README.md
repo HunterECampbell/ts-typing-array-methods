@@ -36,7 +36,7 @@ Practice using TypeScript to type Array Methods.
 
 [Array.prototype.indexOf()](./src/indexOf.ts)
 
-<!-- [Array.prototype.join()](./src/join.ts) -->
+[Array.prototype.join()](./src/join.ts)
 
 <!-- [Array.prototype.keys()](./src/keys.ts) -->
 
